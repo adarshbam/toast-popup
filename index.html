@@ -117,6 +117,34 @@
     <!-- MAIN (UI placeholder) -->
     <main>
       <!-- Your project code here -->
+      <h1>Toast Popup</h1>
+      <div id="toast-container"></div>
+      <form class="toast-popup">
+        <select name="horizontal-position" id="horizontal-position">
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+        </select>
+        <select name="vertical-position" id="vertical-position">
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+        </select>
+        <select name="vertical-position" id="toast-type">
+          <option value="success">Success</option>
+          <option value="error">Error</option>
+          <option value="warning">Warning</option>
+          <option value="info">Info</option>
+        </select>
+        <input
+          id="toast-message"
+          type="text"
+          value="This is a toast message!"
+        />
+        <div class="duration-container">
+          <label for="duration">Duration</label>
+          <input type="range" name="duration" id="duration" min="1" max="10" />
+        </div>
+        <button type="submit" class="show-toast">Show Toast</button>
+      </form>
     </main>
   </body>
 </html>

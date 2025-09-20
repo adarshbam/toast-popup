@@ -6,3 +6,159 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 400px;
+}
+
+#duration {
+  width: 100%;
+}
+
+select,
+input {
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.show-toast {
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.show-toast:hover {
+  border: 1px solid #000;
+}
+
+#toast-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#toast-container {
+  position: fixed;
+
+  color: #fff;
+  z-index: 100;
+}
+.toast {
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+#toast-container.top-left {
+  top: 15px;
+  left: 15px;
+}
+#toast-container.bottom-left {
+  bottom: 15px;
+  left: 15px;
+}
+#toast-container.top-left .toast,
+#toast-container.bottom-left .toast {
+  animation: left 0.3s ease-in-out;
+}
+#toast-container.top-left .toast.close,
+#toast-container.bottom-left .toast.close {
+  animation: leftReverse 0.3s ease-in-out;
+}
+
+#toast-container.top-right {
+  top: 15px;
+  right: 15px;
+}
+
+#toast-container.bottom-right {
+  bottom: 15px;
+  right: 15px;
+}
+
+#toast-container.top-right .toast,
+#toast-container.bottom-right .toast {
+  animation: right 0.3s ease-in-out;
+}
+#toast-container.top-right .toast.close,
+#toast-container.bottom-right .toast.close {
+  animation: rightReverse 0.3s ease-in-out;
+}
+
+#toast.success {
+  background-color: #009600;
+}
+#toast.success::before {
+  content: "✓ ";
+}
+
+#toast.error {
+  background-color: #ff0000;
+}
+#toast.error::before {
+  content: "✗ ";
+}
+
+#toast.warning {
+  background-color: #ec6b03;
+}
+#toast.warning::before {
+  content: "⚠ ";
+}
+
+#toast.info {
+  background-color: #4e4e4e;
+}
+
+#toast.info::before {
+  content: "ⓘ ";
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+.duration-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leftReverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightReverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
