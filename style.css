@@ -7,11 +7,12 @@ body {
   font-family: sans-serif;
 }
 
-form {
+form.toast-popup {
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 400px;
+  margin-top: 1rem;
 }
 
 #duration {
@@ -52,39 +53,30 @@ input {
   padding: 6px 14px;
   border-radius: 4px;
 }
-#toast-container.top-left {
+#toast-container.top {
   top: 15px;
+}
+#toast-container.left {
   left: 15px;
 }
-#toast-container.bottom-left {
+#toast-container.bottom {
   bottom: 15px;
-  left: 15px;
 }
-#toast-container.top-left .toast,
-#toast-container.bottom-left .toast {
+
+#toast-container.right {
+  right: 15px;
+}
+#toast-container.left .toast {
   animation: left 0.3s ease-in-out;
 }
-#toast-container.top-left .toast.close,
-#toast-container.bottom-left .toast.close {
+#toast-container.left .toast.close {
   animation: leftReverse 0.3s ease-in-out;
 }
 
-#toast-container.top-right {
-  top: 15px;
-  right: 15px;
-}
-
-#toast-container.bottom-right {
-  bottom: 15px;
-  right: 15px;
-}
-
-#toast-container.top-right .toast,
-#toast-container.bottom-right .toast {
+#toast-container.right .toast {
   animation: right 0.3s ease-in-out;
 }
-#toast-container.top-right .toast.close,
-#toast-container.bottom-right .toast.close {
+#toast-container.right .toast.close {
   animation: rightReverse 0.3s ease-in-out;
 }
 

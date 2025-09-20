@@ -7,24 +7,12 @@ const toastType = document.querySelector("#toast-type");
 const toastMessage = document.querySelector("#toast-message");
 const duration = document.querySelector("#duration");
 
-const positions = {
-  "top-left": "top-left",
-  "top-right": "top-right",
-  "bottom-left": "bottom-left",
-  "bottom-right": "bottom-right",
-};
-
-let toastPosition;
-
 console.log(form);
 form.addEventListener("submit", (e) => {
-  const toast = document.createElement("div");
   e.preventDefault();
+  const toast = document.createElement("div");
 
   toast.textContent = toastMessage.value;
-  toastPosition =
-    positions[verticalPosition.value + "-" + horizontalPosition.value];
-  console.log(toastPosition);
   toast.setAttribute("class", `toast ${toastType.value}`);
   toast.setAttribute("id", "toast");
 
@@ -34,7 +22,10 @@ form.addEventListener("submit", (e) => {
 
   toast.append(closeBtn);
 
-  toastContainer.setAttribute("class", toastPosition);
+  toastContainer.setAttribute(
+    "class",
+    `${horizontalPosition.value} ${verticalPosition.value}`
+  );
   toastContainer.append(toast);
 
   function closeToast() {
